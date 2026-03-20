@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#bef264", // අර ලස්සන Neon Green පාට
-      }
+        primary: "#bef264",
+      },
     },
   },
   plugins: [],
