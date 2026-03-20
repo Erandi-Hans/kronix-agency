@@ -6,10 +6,24 @@ const Hero = () => {
 
   return (
     <section className="relative flex flex-col items-center justify-center px-6 pt-32 pb-20 overflow-hidden text-center">
-      <div className="absolute top-0 -z-10 h-[500px] w-[800px] bg-[#bef264]/10 blur-[150px] rounded-full" />
+      <div className="absolute top-0 -z-10 h-[500px] w-[800px] bg-[#bef264]/15 blur-[150px] rounded-full" />
       
-      <Sparkles className="absolute top-40 right-[20%] text-[#bef264] opacity-50 w-8 h-8" />
-      <Sparkles className="absolute top-80 left-[15%] text-[#bef264] opacity-20 w-4 h-4" />
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
+        animate={{ opacity: 1, scale: 1, rotate: 0 }}
+        transition={{ duration: 1 }}
+        className="absolute top-40 right-[15%] md:right-[20%] text-[#bef264]"
+      >
+        <Sparkles size={40} />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.3 }}
+        className="absolute top-80 left-[10%] text-[#bef264]"
+      >
+        <Sparkles size={20} />
+      </motion.div>
 
       <motion.h1 
         initial={{ opacity: 0, y: 30 }}
@@ -36,24 +50,24 @@ const Hero = () => {
         transition={{ delay: 0.8 }}
         className="mt-10"
       >
-        <button className="bg-[#bef264] text-black font-bold py-4 px-10 rounded-lg text-lg hover:scale-105 transition-transform active:scale-95">
+        <button className="bg-[#bef264] text-black font-bold py-4 px-10 rounded-lg text-lg hover:scale-105 transition-transform active:scale-95 shadow-[0_0_20px_rgba(190,242,100,0.3)]">
           Book A Meeting
         </button>
       </motion.div>
 
       <div className="w-full max-w-5xl mt-24">
-        <div className="flex items-center justify-center gap-4 mb-10">
-          <div className="h-[1px] w-12 bg-gray-800"></div>
-          <span className="text-[10px] uppercase tracking-[0.4em] text-gray-500 font-bold">
+        <div className="flex items-center justify-center gap-6 mb-10">
+          <div className="h-[1px] w-20 bg-gradient-to-r from-transparent to-[#bef264]/50"></div>
+          <span className="text-[10px] uppercase tracking-[0.4em] text-gray-500 font-bold whitespace-nowrap">
             Trusted by amazing brands
           </span>
-          <div className="h-[1px] w-12 bg-gray-800"></div>
+          <div className="h-[1px] w-20 bg-gradient-to-l from-transparent to-[#bef264]/50"></div>
         </div>
         
-        <div className="flex flex-wrap items-center justify-around gap-8 p-8 border bg-white/5 backdrop-blur-md border-white/10 rounded-2xl">
+        <div className="flex flex-wrap items-center justify-around gap-8 p-8 border bg-white/5 backdrop-blur-md border-white/10 rounded-3xl">
           {brands.map((brand) => (
-            <div key={brand} className="flex items-center gap-2 transition-all cursor-pointer grayscale hover:grayscale-0 opacity-70 hover:opacity-100">
-              <div className="w-5 h-5 bg-gray-500 rounded-sm"></div>
+            <div key={brand} className="flex items-center gap-2 transition-all cursor-pointer grayscale hover:grayscale-0 opacity-60 hover:opacity-100">
+              <div className="w-6 h-6 rounded-md bg-white/20 rotate-12"></div>
               <span className="text-xl font-bold text-white">{brand}</span>
             </div>
           ))}
