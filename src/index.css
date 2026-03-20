@@ -1,5 +1,53 @@
 @import "tailwindcss";
 
 body {
-  @apply bg-black text-white;
+  margin: 0;
+  background-color: #000;
+  color: white;
+  min-height: 100vh;
+  position: relative;
+  /* මෙතන opacity එක 0.02 දක්වා අඩු කළා, එවිට තිත් ගතිය ලාවට පෙනෙයි */
+  background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url("https://grainy-gradients.vercel.app/noise.svg");
+  background-repeat: repeat;
+  overflow-x: hidden;
+}
+
+/* Original එකේ වගේ තද Glow එකක් ඇති කිරීමට */
+body::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 600px;
+  /* වර්ණය තව ටිකක් තද කළා (opacity 0.2) */
+  background: radial-gradient(
+    circle,
+    rgba(190, 242, 100, 0.2) 0%,
+    rgba(190, 242, 100, 0.08) 45%,
+    transparent 70%
+  );
+  filter: blur(80px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* තවත් අමතර Glow එකක් පහළින් */
+body::after {
+  content: "";
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(190, 242, 100, 0.1) 0%,
+    transparent 70%
+  );
+  filter: blur(100px);
+  z-index: -1;
+  pointer-events: none;
 }
