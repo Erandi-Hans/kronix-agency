@@ -5,6 +5,8 @@ import Portfolio from './components/Portfolio';
 import FAQ from './components/FAQ';
 import Benefits from './components/Benefits';
 import Services from './components/Services';
+import Footer from './components/Footer';
+import Pricing from './components/Pricing';
 
 function App() {
   return (
@@ -12,10 +14,12 @@ function App() {
       <Navbar />
       <Hero />
       <Process />
+      <Portfolio />
       <Benefits />
       <Services />
-      <Portfolio />
+      <Pricing />
       <FAQ />
+      <Footer />
     </div>
   );
 }
