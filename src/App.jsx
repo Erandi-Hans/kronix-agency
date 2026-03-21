@@ -7,6 +7,7 @@ import Benefits from './components/Benefits';
 import Services from './components/Services';
 import Footer from './components/Footer';
 import Pricing from './components/Pricing';
+import CTA from './components/Cta';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Services />
       <Pricing />
       <FAQ />
+      <CTA />
       <Footer />
     </div>
   );
