@@ -72,7 +72,7 @@ const Hero = () => {
         
         {/* The Glass Logo Bar */}
         <div className="relative group">
-          {/* Bar එකට පල්ලෙහායින් තියෙන අඳුරු Shadow එක */}
+    
           <div className="absolute inset-0 translate-y-4 rounded-full bg-black/40 blur-2xl -z-10" />
           
           <div className="flex flex-wrap items-center justify-around gap-10 py-6 px-10 bg-[#1a1a1a]/40 backdrop-blur-md border border-white/[0.08] rounded-2xl shadow-2xl">
