@@ -1,7 +1,13 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Layers, Disc, Target, Hourglass, Zap } from 'lucide-react';
 
-const Hero = () => {
+/**
+ * Hero Component
+ * @param {Function} onBookMeeting - Function to trigger the Contact Modal
+ */
+const Hero = ({ onBookMeeting }) => {
+  // Array of partner/client brands for the trusted section
   const brands = [
     { name: 'Layers', icon: <Layers size={18} /> },
     { name: 'Quotient', icon: <Disc size={18} /> },
@@ -13,10 +19,10 @@ const Hero = () => {
   return (
     <section className="relative flex flex-col items-center justify-center px-6 pt-32 pb-20 overflow-hidden text-center">
       
-      {/* Background Aura */}
+      {/* Background Aura: Subtle green glow for depth */}
       <div className="absolute top-0 -z-10 h-[500px] w-[800px] bg-[#bef264]/10 blur-[150px] rounded-full" />
       
-      {/* Sparkle Icon */}
+      {/* Decorative Sparkle Icon with floating animation */}
       <motion.div 
         initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
         animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -26,7 +32,7 @@ const Hero = () => {
         <Sparkles size={48} strokeWidth={1} />
       </motion.div>
 
-      {/* Main Heading */}
+      {/* Main Heading: Captivating title with serif italic accent */}
       <motion.h1 
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -37,6 +43,7 @@ const Hero = () => {
         Dream Into <span className="text-[#bef264] italic font-serif font-normal">Reality</span>
       </motion.h1>
 
+      {/* Subtext: Brief introduction of the agency value proposition */}
       <motion.p 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -46,22 +53,25 @@ const Hero = () => {
         We increase revenue and ensure sustainable long-term growth for your business through powerful Webflow websites.
       </motion.p>
 
-      {/* Primary CTA Button */}
+      {/* Primary Call to Action: Button to trigger the booking modal */}
       <motion.div 
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.8 }}
         className="mt-10"
       >
-        <button className="bg-[#bef264] text-black font-bold py-4 px-10 rounded-xl text-[1.1rem] hover:brightness-110 transition-all shadow-[0_10px_30px_rgba(190,242,100,0.2)]">
+        <button 
+          onClick={onBookMeeting}
+          className="bg-[#bef264] text-black font-bold py-4 px-10 rounded-xl text-[1.1rem] hover:brightness-110 transition-all shadow-[0_10px_30px_rgba(190,242,100,0.2)] active:scale-95"
+        >
           Book A Meeting
         </button>
       </motion.div>
 
-      {/* Trusted By Section */}
+      {/* Trusted By Section: Social proof displaying partner logos */}
       <div className="w-full max-w-5xl mt-28">
         
-        {/* Vibrant Green Lines */}
+        {/* Visual separator with glowing neon lines */}
         <div className="flex items-center justify-center gap-6 mb-8">
           <div className="h-[2px] w-14 bg-[#bef264] shadow-[0_0_12px_#bef264]"></div>
           <span className="text-[10px] uppercase tracking-[0.5em] text-gray-500 font-bold">
@@ -70,18 +80,22 @@ const Hero = () => {
           <div className="h-[2px] w-14 bg-[#bef264] shadow-[0_0_12px_#bef264]"></div>
         </div>
         
-        {/* The Glass Logo Bar */}
+        {/* Glassmorphism Logo Bar: Transparent background with blur effect */}
         <div className="relative group">
-    
+          {/* Subtle shadow behind the bar */}
           <div className="absolute inset-0 translate-y-4 rounded-full bg-black/40 blur-2xl -z-10" />
           
           <div className="flex flex-wrap items-center justify-around gap-10 py-6 px-10 bg-[#1a1a1a]/40 backdrop-blur-md border border-white/[0.08] rounded-2xl shadow-2xl">
             {brands.map((brand) => (
-              <div key={brand.name} className="flex items-center gap-2.5 transition-all duration-300 opacity-60 hover:opacity-100 hover:scale-105 cursor-default">
-                {/* Icon Container with subtle white tint */}
+              <div 
+                key={brand.name} 
+                className="flex items-center gap-2.5 transition-all duration-300 opacity-60 hover:opacity-100 hover:scale-105 cursor-default"
+              >
+                {/* Brand Icon Container */}
                 <div className="text-white/90 bg-white/5 p-1.5 rounded-md shadow-inner">
                   {brand.icon}
                 </div>
+                {/* Brand Name */}
                 <span className="text-[1.3rem] font-bold text-white/90 tracking-tight">
                   {brand.name}
                 </span>
