@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Sparkles, Send, RefreshCcw } from 'lucide-react';
 
 const Process = () => {

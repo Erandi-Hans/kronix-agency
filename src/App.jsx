@@ -8,7 +8,6 @@ import Portfolio from './components/Sections/Portfolio';
 import FAQ from './components/Sections/FAQ';
 import Benefits from './components/Sections/Benefits';
 import Services from './components/Sections/Services';
-
 import Pricing from './components/Sections/Pricing';
 import CTA from './components/Sections/Cta';
 
