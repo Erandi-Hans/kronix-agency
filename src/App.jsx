@@ -1,15 +1,7 @@
-import { useState } from 'react'; // මේක අමතක කරන්න එපා
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Process from './components/Process';
-import Portfolio from './components/Portfolio';
-import FAQ from './components/FAQ';
-import Benefits from './components/Benefits';
-import Services from './components/Services';
-import Footer from './components/Footer';
-import Pricing from './components/Pricing';
-import CTA from './components/Cta';
-import ContactModal from './components/ContactModal';
+import { useState } from 'react'; 
+
+
+
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
